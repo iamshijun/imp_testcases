@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-public class TestCode {
+public class CodeTest {
 
 	@Test
 	public void testCode() throws UnsupportedEncodingException{
