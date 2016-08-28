@@ -1,4 +1,4 @@
-package utils;
+package com.kibou.lang;
 
 public class Numbers {
 	public static String digit(byte val, int digit) {

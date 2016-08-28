@@ -1,13 +1,9 @@
-package utils;
+package com.kibou.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
-/**
- * @author lenovo
- * 
- */
 public class MD5Util {
 
 	public static String encrypt(byte[] salt, byte[] encrypted) {

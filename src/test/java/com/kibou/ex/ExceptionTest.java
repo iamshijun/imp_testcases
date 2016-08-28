@@ -1,4 +1,4 @@
-package ex;
+package com.kibou.ex;
 
 import com.kibou.exception.FException;
 
