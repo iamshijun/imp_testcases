@@ -10,6 +10,7 @@ import java.util.Set;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.internal.util.collections.Sets;
 
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
@@ -25,11 +26,11 @@ public class GuavaMultimapTest {
 	//=>like Map<K,Collection<V>>
 	/*
 	 *  Implementation	       Keys behave like...	Values behave like..
-		ArrayListMultimap	    HashMap	ArrayList
-		HashMultimap	        HashMap	HashSet
-		LinkedListMultimap *	LinkedHashMap*	       LinkedList*
-		LinkedHashMultimap**	LinkedHashMap	       LinkedHashSet
-		TreeMultimap	          TreeMap	           TreeSet
+		ArrayListMultimap	    HashMap				   ArrayList             -- ListMultiMap
+		HashMultimap	        HashMap				   HashSet
+		LinkedListMultimap *	LinkedHashMap*	       LinkedList*           -- ListMultiMap 
+		LinkedHashMultimap**	LinkedHashMap	       LinkedHashSet         -- SetMultiMap
+		TreeMultimap	        TreeMap	               TreeSet               -- SetMultiMap
 		ImmutableListMultimap	ImmutableMap	       ImmutableList
 		ImmutableSetMultimap	ImmutableMap	       ImmutableSet
 	 * */
@@ -56,6 +57,12 @@ public class GuavaMultimapTest {
 		dataPrepare(listMultiMap);
 		
 		// * values
+		/*
+		 * values() views the all the values in the Multimap as a "flattened"
+		 * Collection<V>, all as one collection. This is similar to
+		 * Iterables.concat(multimap.asMap().values()), but returns a full
+		 * Collection instead.
+		 */
 		TIterables.toString(listMultiMap.values(),"Multimap.values() : ");
 		
 		Assert.assertTrue(listMultiMap.containsKey("a"));
@@ -116,6 +123,28 @@ public class GuavaMultimapTest {
 		
 		Assert.assertEquals(bValue, listMultiMap.get("b"));
 		//System.out.println(listMultiMap.get("b")); // [3,33]
+		
+		
+		Assert.assertTrue(listMultiMap.containsKey("c"));
+		listMultiMap.get("c").clear();
+		Assert.assertFalse(listMultiMap.containsKey("c"));
+		
+		Assert.assertThat(listMultiMap.keySet(),Matchers.equalTo(Sets.newSet("b")));
+		System.out.println("Keys left : " + listMultiMap.keySet());
+	}
+	
+	@Test
+	public void testWithNotExistKey(){
+		ListMultimap<String, Integer> listMultiMap = 
+				MultimapBuilder.hashKeys().linkedListValues().build();
+
+		String key = "__notExist__";
+		List<Integer> list = listMultiMap.get(key);//if key is not exist,return empty collection(list,set) &  a fresh, writable empty collection
+		
+		Collection<Integer> collection = listMultiMap.asMap().get(key);// asMap.get 
+		
+		Assert.assertThat(list, Matchers.hasSize(0));//Matchers.empty()
+		Assert.assertNull(collection);
 	}
 	
 	//SetMultimap

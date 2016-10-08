@@ -2,7 +2,6 @@ package com.kibou.io;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -11,9 +10,9 @@ import java.net.URL;
 
 public class IOTest {
 	public static void main(String[] args) {
-		//ËäÈ»FileWriter±¾ÉíÊÇOutputstreamWriterµÄ×ÓÀà,¿ÉÒÔ´«ÈëOutpustream×÷Îª¹¹Ôìº¯ÊıµÄ²ÎÊı,µ«ÊÇFileWriter²¢Ã»ÓĞ±©Â¶ FileOutputStream ÎªÈë²ÎµÄ¹¹Ôìº¯Êı
-		//¶øÊÇÓÉÆäËû¹¹Ôìº¯ÊıÈ¥´´½¨ FileOutputStream²¢ÓÃ´Ëµ÷ÓÃ¸¸ÀàµÄ¹¹Ôì·½·¨,FileReaderÍ¬.
-//		FileWriter writer = new FileWriter(new FileOutputStream(""));
+		//è™½ç„¶FileWriteræœ¬èº«æ˜¯OutputstreamWriterçš„å­ç±»,å¯ä»¥ä¼ å…¥Outpustreamä½œä¸ºæ„é€ å‡½æ•°çš„å‚æ•°,ä½†æ˜¯FileWriterå¹¶æ²¡æœ‰æš´éœ² FileOutputStream ä¸ºå…¥å‚çš„æ„é€ å‡½æ•°
+		//è€Œæ˜¯ç”±å…¶ä»–æ„é€ å‡½æ•°å»åˆ›å»º FileOutputStreamå¹¶ç”¨æ­¤è°ƒç”¨çˆ¶ç±»çš„æ„é€ æ–¹æ³•,FileReaderåŒ.
+		//FileWriter writer = new FileWriter(new FileOutputStream(""));
 		BufferedReader bufferedFileReader = null;
 		try {
 			URL url = IOTest.class.getResource("IOTest.class");
