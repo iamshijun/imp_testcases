@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import com.google.common.collect.MutableClassToInstanceMap;
 
-public class GuavaClassToInstanceMapTest {
+public class ClassToInstanceMapTest {
 	// https://github.com/google/guava/wiki/NewCollectionTypesExplained#classtoinstancemap
 
 	@Test //Technically, ClassToInstanceMap<B> implements Map<Class<? extends B>, B>

@@ -20,7 +20,7 @@ import com.google.common.collect.Multiset;
 import com.kibou.collect.TIterables;
 
 //Multimap Is Not A Map
-public class GuavaMultimapTest {
+public class MultimapTest {
 	//https://github.com/google/guava/wiki/NewCollectionTypesExplained#multimap
 	
 	//=>like Map<K,Collection<V>>

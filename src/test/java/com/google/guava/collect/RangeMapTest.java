@@ -9,7 +9,7 @@ import com.google.common.collect.RangeMap;
 import com.google.common.collect.TreeRangeMap;
 
 //https://github.com/google/guava/wiki/NewCollectionTypesExplained#rangemap
-public class GuavaRangeMapTest {
+public class RangeMapTest {
 
 	@Test
 	public void testRangeMap(){

@@ -13,7 +13,7 @@ import com.google.common.collect.Multiset;
 import com.kibou.collect.TIterables;
 
 //Multiset Is Not A Map
-public class GuavaMultisetTest {
+public class MultisetTest {
 	//https://github.com/google/guava/wiki/NewCollectionTypesExplained#multiset
 
 	private Map<String,Integer> dataPrepare(Multiset<String> multiset){

@@ -13,7 +13,7 @@ import com.kibou.collect.TIterables;
 import com.kibou.collect.TIterables.ToStringStyle;
 
 //TODO 补测试方法 
-public class GuavaTableTest {
+public class TableTest {
 	//https://github.com/google/guava/wiki/NewCollectionTypesExplained#table
 	
 	private class Vertex{

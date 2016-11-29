@@ -10,7 +10,7 @@ import com.kibou.collect.TIterables;
 import ch.qos.logback.core.net.SyslogOutputStream;
 
 //https://github.com/google/guava/wiki/NewCollectionTypesExplained#rangeset
-public class GuavaRangeSetTest {
+public class RangeSetTest {
 
 	@Test
 	public void testRangeSet(){

@@ -9,7 +9,7 @@ import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 import com.google.common.collect.Maps;
 
-public class GuavaBiMapTest {
+public class BiMapTest {
 	//https://github.com/google/guava/wiki/NewCollectionTypesExplained#bimap
 	
 	//Bidirectional Map 双向Map
