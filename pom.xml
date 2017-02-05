@@ -16,6 +16,11 @@
 
 	<dependencies>
 		<dependency>
+		   <groupId>org.redisson</groupId>
+		   <artifactId>redisson</artifactId>
+		   <version>3.2.2</version>
+		</dependency>  
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
@@ -117,12 +122,37 @@
 	       <artifactId>kryo</artifactId>
 	       <version>4.0.0</version>
 	    </dependency>
+	    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.1</version>
+		</dependency>
+			    
 		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
 		<!--<dependency>
 		    <groupId>io.netty</groupId>
 		    <artifactId>netty-all</artifactId>
 		    <version>4.1.1.Final</version>
 		</dependency> -->
+		<dependency>
+			<groupId>com.netflix.hystrix</groupId>
+			<artifactId>hystrix-metrics-event-stream</artifactId>
+			<version>1.5.8</version>
+		</dependency>  
+		<dependency>
+		    <groupId>com.netflix.hystrix</groupId>
+		    <artifactId>hystrix-core</artifactId>
+		    <version>1.5.8</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.reactivex/rxjava -->
+		<dependency>
+		    <groupId>io.reactivex</groupId>
+		    <artifactId>rxjava</artifactId>
+		    <version>1.2.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
