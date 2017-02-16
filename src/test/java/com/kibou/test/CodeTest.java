@@ -1,8 +1,10 @@
 package com.kibou.test;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Arrays;
 
+import org.apache.commons.codec.binary.Hex;
 import org.junit.Test;
 
 public class CodeTest {
@@ -27,10 +29,23 @@ public class CodeTest {
 	
 	@Test
 	public void testCode2() throws Exception{
-		System.out.println(Arrays.toString("ÖÐ".getBytes("iso-8859-1")));
-		System.out.println(Arrays.toString("ÖÐ".getBytes()));//platform's default charset
-		System.out.println(Arrays.toString("ÖÐ".getBytes("GBK")));
-		System.out.println(Arrays.toString("ÖÐ".getBytes("UTF-8")));
-		System.out.println(Arrays.toString("ÖÐ".getBytes("unicode")));
+		System.out.println(Arrays.toString("ä¸­".getBytes("iso-8859-1")));
+		System.out.println(Arrays.toString("ä¸­".getBytes()));//platform's default charset
+		System.out.println(Arrays.toString("ä¸­".getBytes("GBK")));
+		System.out.println(Arrays.toString("ä¸­".getBytes("UTF-8")));
+		System.out.println(Arrays.toString("ä¸­".getBytes("unicode")));
+	}
+	
+	@Test
+	public void testEncoding() throws UnsupportedEncodingException{
+		String str = "çƒ­æ°´å™¨ å®¶ç”¨ ç”µ å‚¨æ°´";
+		byte[] barr = str.getBytes("gbk");
+//		byte[] barr = str.getBytes("utf-8");
+		System.out.println(Arrays.toString(barr));
+		
+		System.out.println(Hex.encodeHexString(barr));
+		
+		String encode = URLEncoder.encode(str, "gbk");
+		System.out.println(encode);
 	}
 }
