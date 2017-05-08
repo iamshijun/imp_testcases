@@ -12,7 +12,7 @@ import com.google.common.collect.RangeSet;
 import com.google.common.collect.TreeRangeSet;
 
 
-public abstract class RangeSetParser {
+public class RangeSetParser {
 
 	private static CharMatcher charMatcher =  is('[').or(is(']')).or(is('(')).or(is(')'));
 	
